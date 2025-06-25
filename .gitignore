@@ -1,0 +1,5 @@
+nixos/home/result
+result
+*.qcow2
+.zed
+.env
