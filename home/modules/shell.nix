@@ -8,7 +8,7 @@
     enable = true;
     shellAliases = {
       nos = "sudo nixos-rebuild switch --flake .#nixos";
-      hms = "home-manager switch --flake .#kleanzy@nixos";
+      hms = "home-manager switch --flake .#kleanzy@main";
       nvs = "nix run github:nix-community/nixos-generators -- --format qcow --flake .#litre1";
       gs = "git status";
       nxr = "nix run";

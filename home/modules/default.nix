@@ -6,6 +6,6 @@
 }: {
   imports = [
     ./shell.nix
-    ./stylix-wallpaper.nix
+    ./user.nix
   ];
 }
