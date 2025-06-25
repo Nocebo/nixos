@@ -24,7 +24,6 @@
       ];
       packages = with pkgs; [
         #move everything to home-manager
-        home-manager
       ];
     };
   };
