@@ -34,5 +34,8 @@
         };
       };
     };
+    home.sessionVariables = {
+      GIT_EDITOR = "code --wait";
+    };
   };
 }

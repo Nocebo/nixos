@@ -27,6 +27,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     home-manager,
     disko,
     stylix,
@@ -54,7 +55,7 @@
       apple = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/litre1/configuration.nix
+          ./hosts/apple/configuration.nix
           stylix.nixosModules.stylix
         ];
       };
@@ -62,21 +63,28 @@
       vm = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/homelab/configuration.nix
+          ./hosts/vm/configuration.nix
           disko.nixosModules.disko
         ];
       };
     };
 
     homeConfigurations = {
-      "kleanzy@nixos" = home-manager.lib.homeManagerConfiguration {
+      "kleanzy@main" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          ./home-manager/home.nix
-          {graphical.editor = "vscode";}
+          ./home/main.nix
         ];
       };
+    };
+
+    "kleanzy@server" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      extraSpecialArgs = {inherit inputs outputs;};
+      modules = [
+        ./home/server.nix
+      ];
     };
   };
 }

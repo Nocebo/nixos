@@ -7,9 +7,11 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      nos = "sudo nixos-rebuild switch --flake .#nixos";
-      hms = "home-manager switch --flake .#kleanzy@nixos";
-      nvs = "nix run github:nix-community/nixos-generators -- --format qcow --flake .#litre1";
+      ns = "sudo nixos-rebuild switch";
+      nb = "sudo nixos-rebuild build";
+      hs = "home-manager switch";
+      hb = "home-manager build";
+      nvs = "nix run github:nix-community/nixos-generators -- --format qcow";
       gs = "git status";
       nxr = "nix run";
     };
