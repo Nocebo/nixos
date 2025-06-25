@@ -77,14 +77,14 @@
           ./home/main.nix
         ];
       };
-    };
 
-    "kleanzy@server" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      extraSpecialArgs = {inherit inputs outputs;};
-      modules = [
-        ./home/server.nix
-      ];
+      "kleanzy@server" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home/server.nix
+        ];
+      };
     };
   };
 }
