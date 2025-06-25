@@ -9,7 +9,7 @@
   ];
 
   # Self made options
-  noeditor = true;
+  noeditor.enable = true;
 
   # Keep on all?
   systemd.user.startServices = "sd-switch";
