@@ -15,11 +15,12 @@
   networking.hostName = "litre1";
 
   # User modules
-  hardenedOpenssh = true; # Enable unsafe OpenSSH server
+  softOpenssh = true; # Enable unsafe OpenSSH server
   desktop.environment = "none"; # Disable desktop environment
   enableDocker = true; # Enable Docker container management
   enableStylix = false; # Enable Stylix theme and icon pack
   bootSystemd = true; # Enable systemd-boot bootloader
+  tailscale = true; # Enable Tailscale networking
 
   environment.defaultPackages = with pkgs; [
     htop

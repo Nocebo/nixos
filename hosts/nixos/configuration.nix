@@ -22,6 +22,7 @@
   enableDocker = true; # Enable Docker container management
   bootGrub = true; # Enable GRUB bootloader
   virt = true; # Enable virtualization support
+  tailscale = true; # Enable Tailscale networking
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
