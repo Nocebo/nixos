@@ -27,6 +27,19 @@
     tree
   ];
 
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      {
+        name = "nasua-update";
+        command = "bash /home/kleanzy/nasua/main.sh";
+        user = "kleanzy";
+        # schedule for hourly updates
+        schedule = "0 * * * *";
+      }
+    ];
+  };
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
