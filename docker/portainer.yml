@@ -8,6 +8,7 @@ services:
     ports:
       - "8000:8000" # Edge agent communication (used for Portainer Edge Agents)
       - "9443:9443" # HTTPS web UI and API access (secure Portainer dashboard)
+    volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
 
