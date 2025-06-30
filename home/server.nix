@@ -13,6 +13,7 @@
     jq
     bc
     (perl.withPackages (ps: with ps; [HTMLParser]))
+    cronie
   ];
 
   # Self made options
