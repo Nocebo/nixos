@@ -22,10 +22,22 @@
     coreutils
     htop
     duckdb
-    # windsurf
-    # zed-editor
+    pup
+    ranger
+    miller
+    jq
+    bc
+    python3
+    python3Packages.pip
+    python3Packages.virtualenv
+    python3Packages.requests
+    python3Packages.pandas
+    python3Packages.numpy
+    #beatuifulsoup4
+    python3Packages.beautifulsoup4
+    python3Packages.ipykernel
+    (perl.withPackages (ps: with ps; [HTMLParser]))
   ];
-
   # Self made options
   vscode.enable = true;
 
