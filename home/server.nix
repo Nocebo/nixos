@@ -7,13 +7,6 @@
   home.packages = with pkgs; [
     curl
     duckdb
-    pup
-    ranger
-    miller
-    jq
-    bc
-    (perl.withPackages (ps: with ps; [HTMLParser]))
-    cronie
   ];
 
   # Self made options

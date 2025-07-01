@@ -1,0 +1,5 @@
+{...}: {
+  imports = [
+    ./nasua.nix
+  ];
+}

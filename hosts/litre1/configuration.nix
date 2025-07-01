@@ -11,6 +11,7 @@
     ../../system/containers
     ../../system/boot
     ../../system/desktop
+    ../../system/services
   ];
   networking.hostName = "litre1";
 
@@ -25,20 +26,8 @@
   environment.defaultPackages = with pkgs; [
     htop
     tree
+    ripgrep
   ];
-
-  services.cron = {
-    enable = true;
-    systemCronJobs = [
-      {
-        name = "nasua-update";
-        command = "bash /home/kleanzy/nasua/main.sh";
-        user = "kleanzy";
-        # schedule for hourly updates
-        schedule = "0 * * * *";
-      }
-    ];
-  };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
