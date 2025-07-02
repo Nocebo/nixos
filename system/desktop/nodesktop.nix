@@ -3,12 +3,11 @@
   lib,
   pkgs,
   ...
-}:
-with lib; {
-  options.nodesktop = {
-    enable = mkEnableOption "No desktop environment";
+}: {
+  options = {
+    desktop.none = lib.mkEnableOption "No desktop environment";
   };
-  config = lib.mkIf config.nodesktop.enable {
+  config = lib.mkIf config.desktop.none {
     #services.xserver.enable = false;
   };
 }

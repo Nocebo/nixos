@@ -18,11 +18,12 @@
   networking.hostName = "vm";
 
   # User modules
-  softOpenssh = true; # Enable unsafe OpenSSH server
-  desktop.environment = "none"; # Disable desktop environment
-  enableStylix = true; # Enable Stylix theme and icon pack
-  enableDocker = true; # Enable Docker container management
-  bootGrub = true; # Enable GRUB bootloader
+  openssh.enable = true;
+  openssh.mode = "soft"; # Unsafe SSH for development
+  desktop.none = true; # Disable desktop environment
+  desktop.stylix = true; # Enable Stylix theme and icon pack
+  virt.docker = true; # Enable Docker container management
+  boot.grub = true; # Enable GRUB bootloader
 
   # Enable sway
   programs.sway = {

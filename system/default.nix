@@ -11,7 +11,6 @@
     ./boot
     ./desktop
     ./services
-    ./devshells
   ];
 
   environment.systemPackages = with pkgs; [

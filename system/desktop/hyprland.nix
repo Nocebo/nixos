@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    hyprland.enable = lib.mkEnableOption "Hyprland desktop environment";
+    desktop.hyprland = lib.mkEnableOption "Hyprland desktop environment";
   };
 
-  config = lib.mkIf config.hyprland.enable {
+  config = lib.mkIf config.desktop.hyprland {
     # Enable basic Hyprland support at system level
     programs.hyprland = {
       enable = true;

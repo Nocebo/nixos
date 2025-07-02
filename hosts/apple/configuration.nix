@@ -11,11 +11,12 @@
   networking.hostName = "apple";
 
   # User modules
-  hardenedOpenssh = true; # Enable unsafe OpenSSH server
-  desktop.environment = "none"; # Disable desktop environment
-  enableDocker = true; # Enable Docker container management
-  enableStylix = false; # Enable Stylix theme and icon pack
-  bootSystemd = true; # Enable systemd-boot bootloader
+  openssh.enable = true;
+  openssh.mode = "hardened"; # Secure SSH for production
+  desktop.none = true; # Disable desktop environment
+  virt.docker = true; # Enable Docker container management
+  desktop.stylix = false; # Enable Stylix theme and icon pack
+  boot.systemd = true; # Enable systemd-boot bootloader
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
