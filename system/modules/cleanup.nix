@@ -5,9 +5,11 @@
 }: {
   nix.settings.auto-optimise-store = true;
 
-  nix.gc.automatic = true;
-  nix.gc.dates = "weekly"; # Run garbage collection every week
-  nix.gc.options = "--delete-older-than 30d"; # Delete generations older than 30 days
+  nix.gc = {
+    automatic = true;
+    dates = "weekly"; # Run garbage collection every week
+    options = "--delete-older-than 30d"; # Delete generations older than 30 days
+  }
 
   boot.loader.systemd-boot.configurationLimit = 10; # Keep the last 10 boot entries
 

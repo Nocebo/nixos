@@ -12,13 +12,14 @@
   networking.hostName = "nixos";
 
   # User modules
-  softOpenssh = true; # Enable unsafe OpenSSH server
-  desktop.environment = "gnome"; # Disable desktop environment
-  enableStylix = true; # Enable Stylix theme and icon pack
-  enableDocker = true; # Enable Docker container management
-  bootGrub = true; # Enable GRUB bootloader
+  openssh.enable = true;
+  openssh.mode = "soft"; # Unsafe SSH for development
+  desktop.gnome.enable = true; # Enable GNOME desktop environment
+  desktop.stylix = true; # Enable Stylix theme and icon pack
+  virt.docker = true; # Enable Docker container management
+  boot.grub = true; # Enable GRUB bootloader
   virt = true; # Enable virtualization support
-  tailscale = true; # Enable Tailscale networking
+  net.tailscale = true; # Enable Tailscale networking
   devshells.rust = true; # Enable Rust development environment
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

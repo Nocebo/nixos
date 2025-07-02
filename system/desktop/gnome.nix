@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    gnome.enable = lib.mkEnableOption "GNOME desktop environment";
+    desktop.gnome = lib.mkEnableOption "GNOME desktop environment";
   };
-
-  config = lib.mkIf config.gnome.enable {
+  
+  config = lib.mkIf config.desktop.gnome {
     # Enable the X11 windowing system.
     services.xserver.enable = true;
 
