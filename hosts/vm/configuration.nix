@@ -10,11 +10,7 @@
     #"${modulesPath}/installer/scan/not-detected.nix"
     #./disko.nix
     ./hardware-configuration.nix
-    ../../system/modules # Never remove, contains user
-    ../../system/networking
-    ../../system/containers
-    #../../system/boot
-    ../../system/desktop
+    ../../system # System-wide configuration modules
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux"; # or your appropriate system architecture

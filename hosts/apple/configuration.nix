@@ -6,11 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../system/modules # Never remove, contains user
-    ../../system/networking
-    ../../system/containers
-    ../../system/boot
-    ../../system/desktop
+    ../../system # System-wide configuration modules
   ];
   networking.hostName = "apple";
 

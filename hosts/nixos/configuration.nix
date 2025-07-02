@@ -7,11 +7,7 @@
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
-    ../../system/modules # Never remove, contains user
-    ../../system/networking
-    ../../system/containers
-    ../../system/boot
-    ../../system/desktop
+    ../../system # System-wide configuration modules
   ];
   networking.hostName = "nixos";
 
@@ -23,6 +19,7 @@
   bootGrub = true; # Enable GRUB bootloader
   virt = true; # Enable virtualization support
   tailscale = true; # Enable Tailscale networking
+  devshells.rust = true; # Enable Rust development environment
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
