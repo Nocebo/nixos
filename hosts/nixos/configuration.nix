@@ -19,9 +19,9 @@
   softOpenssh = true; # Enable unsafe OpenSSH server
   desktop.environment = "gnome"; # Disable desktop environment
   enableStylix = true; # Enable Stylix theme and icon pack
-  enableDocker = true; # Enable Docker container management
+  enableDocker = false; # Enable Docker container management
   bootGrub = true; # Enable GRUB bootloader
-  virt = true; # Enable virtualization support
+  virt = false; # Enable virtualization support
   tailscale = true; # Enable Tailscale networking
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
