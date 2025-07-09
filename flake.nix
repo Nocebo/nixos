@@ -36,7 +36,7 @@
     inherit (self) outputs;
   in {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs-stable.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/nixos/configuration.nix
@@ -44,7 +44,7 @@
         ];
       };
 
-      litre1 = nixpkgs.lib.nixosSystem {
+      litre1 = nixpkgs-stable.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/litre1/configuration.nix
@@ -52,7 +52,7 @@
         ];
       };
 
-      apple = nixpkgs.lib.nixosSystem {
+      apple = nixpkgs-stable.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/apple/configuration.nix

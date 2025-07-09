@@ -9,6 +9,7 @@
     jq
     pup
     bc
+    wget
     (perl.withPackages (ps: with ps; [HTMLParser]))
   ];
 
