@@ -4,9 +4,9 @@
   config,
   ...
 }: {
-  options.bootGrub = lib.mkEnableOption "Enable GRUB bootloader";
+  options.boot.grub = lib.mkEnableOption "Enable GRUB bootloader";
 
-  config = lib.mkIf config.bootGrub {
+  config = lib.mkIf config.boot.grub {
     boot.loader.efi.canTouchEfiVariables = true;
     # grub considering the hardware configuration
     boot.loader.grub = {

@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: {
-  options.virt = lib.mkEnableOption "Virtualization support";
+  options.virt.qemu = lib.mkEnableOption "Virtualization support";
 
-  config = lib.mkIf config.virt {
+  config = lib.mkIf config.virt.qemu {
     environment.systemPackages = with pkgs; [
       # virt-manager is a desktop application for managing virtual machines.
       # virt-manager

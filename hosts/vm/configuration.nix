@@ -10,11 +10,7 @@
     #"${modulesPath}/installer/scan/not-detected.nix"
     #./disko.nix
     ./hardware-configuration.nix
-    ../../system/modules # Never remove, contains user
-    ../../system/networking
-    ../../system/containers
-    #../../system/boot
-    ../../system/desktop
+    ../../system # System-wide configuration modules
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux"; # or your appropriate system architecture
@@ -22,11 +18,12 @@
   networking.hostName = "vm";
 
   # User modules
-  softOpenssh = true; # Enable unsafe OpenSSH server
-  desktop.environment = "none"; # Disable desktop environment
-  enableStylix = true; # Enable Stylix theme and icon pack
-  enableDocker = true; # Enable Docker container management
-  bootGrub = true; # Enable GRUB bootloader
+  openssh.enable = true;
+  openssh.mode = "soft"; # Unsafe SSH for development
+  desktop.none = true; # Disable desktop environment
+  desktop.stylix = true; # Enable Stylix theme and icon pack
+  virt.docker = true; # Enable Docker container management
+  boot.grub = true; # Enable GRUB bootloader
 
   # Enable sway
   programs.sway = {

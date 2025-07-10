@@ -2,8 +2,8 @@
   description = "I hope I never have to edit this again";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -27,33 +27,46 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-stable,
+    nixpkgs-unstable,
     home-manager,
     disko,
     stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
+
+    pkgs = import nixpkgs {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
+    };
+
+    pkgs-unstable = import nixpkgs-unstable {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
+    };
+
+    specialArgs = {inherit inputs outputs pkgs-unstable;};
+    extraSpecialArgs = {inherit inputs outputs pkgs-unstable;};
   in {
     nixosConfigurations = {
-      nixos = nixpkgs-stable.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+      nixos = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
         modules = [
           ./hosts/nixos/configuration.nix
           stylix.nixosModules.stylix
         ];
       };
 
-      litre1 = nixpkgs-stable.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+      litre1 = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
         modules = [
           ./hosts/litre1/configuration.nix
           stylix.nixosModules.stylix
         ];
       };
 
-      apple = nixpkgs-stable.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+      apple = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
         modules = [
           ./hosts/apple/configuration.nix
           stylix.nixosModules.stylix
@@ -61,7 +74,7 @@
       };
 
       vm = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        inherit specialArgs;
         modules = [
           ./hosts/vm/configuration.nix
           disko.nixosModules.disko
@@ -71,16 +84,16 @@
 
     homeConfigurations = {
       "kleanzy@main" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
+        pkgs = pkgs;
+        inherit extraSpecialArgs;
         modules = [
           ./home/main.nix
         ];
       };
 
       "kleanzy@server" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
+        pkgs = pkgs;
+        inherit extraSpecialArgs;
         modules = [
           ./home/server.nix
         ];

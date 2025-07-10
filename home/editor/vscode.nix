@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   lib,
   ...
 }: {
@@ -9,14 +10,14 @@
   };
 
   config = lib.mkIf config.vscode.enable {
-    home.packages = with pkgs; [
-      vscode
-      nixd # Alternative Nix language server
-      alejandra # Formatter
+    home.packages = [
+      pkgs.nixd # Alternative Nix language server
+      pkgs.alejandra # Formatter
     ];
 
     programs.vscode = {
       enable = true;
+      usepackage = pkgs-unstable.vscode;
       profiles = {
         default = {
           userSettings = {
@@ -27,7 +28,7 @@
             "nix.serverSettings.nixd.formatting.command" = ["alejandra"];
             "nix.ide.diagnostics.enable" = false;
           };
-          extensions = with pkgs.vscode-extensions; [
+          extensions = with pkgs-unstable.vscode-extensions; [
             jnoortheen.nix-ide
             # bbenoist.Nix
           ];

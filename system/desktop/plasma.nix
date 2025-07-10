@@ -5,9 +5,9 @@
   ...
 }: {
   options = {
-    plasma.enable = lib.mkEnableOption "Plasma desktop environment";
+    desktop.plasma = lib.mkEnableOption "Plasma desktop environment";
   };
-  config = lib.mkIf config.plasma.enable {
+  config = lib.mkIf config.desktop.plasma {
     # Enable the X11 windowing system.
     services.xserver.enable = true;
 

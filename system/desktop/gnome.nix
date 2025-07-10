@@ -5,10 +5,10 @@
   ...
 }: {
   options = {
-    gnome.enable = lib.mkEnableOption "GNOME desktop environment";
+    desktop.gnome = lib.mkEnableOption "GNOME desktop environment";
   };
 
-  config = lib.mkIf config.gnome.enable {
+  config = lib.mkIf config.desktop.gnome {
     # Enable the X11 windowing system.
     services.xserver.enable = true;
 
@@ -16,7 +16,6 @@
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.desktopManager.gnome.enable = true;
 
-    # Remove the new-style options that don't exist in stable
     # services.displayManager.gdm.enable = true;
     # services.desktopManager.gnome.enable = true;
 

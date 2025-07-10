@@ -7,22 +7,19 @@
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
-    ../../system/modules # Never remove, contains user
-    ../../system/networking
-    ../../system/containers
-    ../../system/boot
-    ../../system/desktop
+    ../../system # System-wide configuration modules
   ];
   networking.hostName = "nixos";
 
   # User modules
-  softOpenssh = true; # Enable unsafe OpenSSH server
-  desktop.environment = "gnome"; # Disable desktop environment
-  enableStylix = true; # Enable Stylix theme and icon pack
-  enableDocker = false; # Enable Docker container management
-  bootGrub = true; # Enable GRUB bootloader
-  virt = false; # Enable virtualization support
-  tailscale = true; # Enable Tailscale networking
+  openssh.enable = true;
+  openssh.mode = "soft"; # Unsafe SSH for development
+  desktop.gnome = true; # Enable GNOME desktop environment
+  desktop.stylix = true; # Enable Stylix theme and icon pack
+  virt.docker = true; # Enable Docker container management
+  boot.grub = true; # Enable GRUB bootloader
+  virt.qemu = true; # Enable virtualization support
+  net.tailscale = true; # Enable Tailscale networking
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;

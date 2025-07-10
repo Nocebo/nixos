@@ -4,9 +4,9 @@
   config,
   ...
 }: {
-  options.enableStylix = lib.mkEnableOption "Stylix, a GTK theme and icon pack";
+  options.desktop.stylix = lib.mkEnableOption "Stylix, a GTK theme and icon pack";
 
-  config = lib.mkIf config.enableStylix {
+  config = lib.mkIf config.desktop.stylix {
     stylix = {
       enable = true;
       autoEnable = true;
