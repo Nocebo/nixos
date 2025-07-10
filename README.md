@@ -20,6 +20,10 @@ It's good to build it before
 nixos-rebuild build --flake .#litre1
 ```
 
+# Theming
+stylix
+https://base16-showcase.vercel.app/ for base16 premades
+
 # Configs
 This is the best way to do it tbh
 ```nix

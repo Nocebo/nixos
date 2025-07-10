@@ -14,7 +14,7 @@
         autoImport = true; # This will automatically import stylix in Home Manager
         followSystem = true; # This ensures Home Manager follows system-wide settings
       };
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/seti.yaml";
 
       fonts = {
         serif = {

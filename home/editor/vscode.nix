@@ -17,7 +17,7 @@
 
     programs.vscode = {
       enable = true;
-      usepackage = pkgs-unstable.vscode;
+      package = pkgs-unstable.vscode; # Changed from 'usepackage' to 'package'
       profiles = {
         default = {
           userSettings = {
