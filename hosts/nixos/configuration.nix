@@ -20,6 +20,7 @@
   boot.grub = true; # Enable GRUB bootloader
   virt.qemu = true; # Enable virtualization support
   net.tailscale = true; # Enable Tailscale networking
+  gaming.steam = true; # Enable Steam gaming support
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
