@@ -19,6 +19,9 @@
   useboot.systemd = true; # Enable systemd-boot bootloader
   net.tailscale = true; # Enable Tailscale networking
 
+  # Vallheim ports
+  networking.firewall.allowedUDPPorts = [2456 2457 2458];
+
   environment.defaultPackages = with pkgs; [
     htop
     tree
