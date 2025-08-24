@@ -22,6 +22,8 @@
       # Gaming utilities
       gamemode
       mangohud
+      lutris
+      protontricks
     ];
   };
 }
