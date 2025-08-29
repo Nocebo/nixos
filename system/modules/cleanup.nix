@@ -3,7 +3,12 @@
   pkg,
   ...
 }: {
-  nix.settings.auto-optimise-store = true;
+  nix.settings = {
+    auto-optimise-store = true;
+    # Add parallel building
+    max-jobs = "auto";
+    cores = 0; # Use all available cores
+  };
 
   nix.gc = {
     automatic = true;

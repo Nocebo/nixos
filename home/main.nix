@@ -19,7 +19,7 @@
     pkgs.tree
     pkgs.coreutils
     pkgs.htop
-    pkgs-unstable.duckdb
+    pkgs.duckdb
   ];
   # Self made options
   vscode.enable = true;
