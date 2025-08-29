@@ -7,7 +7,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../system # System-wide configuration modules
-    ../../system # System-wide configuration modules
   ];
   networking.hostName = "litre1";
 

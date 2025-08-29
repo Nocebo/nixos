@@ -8,7 +8,6 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ../../system # System-wide configuration modules
-    ../../system # System-wide configuration modules
   ];
   networking.hostName = "nixos";
 
