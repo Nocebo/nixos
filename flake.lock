@@ -145,13 +145,17 @@
       "locked": {
         "lastModified": 1744584021,
         "narHash": "sha256-0RJ4mJzf+klKF4Fuoc8VN8dpQQtZnKksFmR2jhWE1Ew=",
+        "lastModified": 1744584021,
+        "narHash": "sha256-0RJ4mJzf+klKF4Fuoc8VN8dpQQtZnKksFmR2jhWE1Ew=",
         "owner": "GNOME",
         "repo": "gnome-shell",
+        "rev": "52c517c8f6c199a1d6f5118fae500ef69ea845ae",
         "rev": "52c517c8f6c199a1d6f5118fae500ef69ea845ae",
         "type": "github"
       },
       "original": {
         "owner": "GNOME",
+        "ref": "48.1",
         "ref": "48.1",
         "repo": "gnome-shell",
         "type": "github"
@@ -190,10 +194,12 @@
       "original": {
         "owner": "nixos",
         "ref": "nixos-25.05",
+        "ref": "nixos-25.05",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
+    "nixpkgs-unstable": {
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1756266583,
@@ -205,6 +211,7 @@
       },
       "original": {
         "owner": "nixos",
+        "ref": "nixos-unstable",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -242,6 +249,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "nixpkgs-unstable": "nixpkgs-unstable",
         "stylix": "stylix"
       }
     },
@@ -275,6 +283,7 @@
       },
       "original": {
         "owner": "danth",
+        "ref": "release-25.05",
         "ref": "release-25.05",
         "repo": "stylix",
         "type": "github"
