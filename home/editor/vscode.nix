@@ -6,13 +6,13 @@
   ...
 }: {
   options = {
-    vscode.enable = lib.mkEnableOption "vscode editor";
+    editor.vscode = lib.mkEnableOption "vscode editor";
   };
 
-  config = lib.mkIf config.vscode.enable {
+  config = lib.mkIf config.editor.vscode {
     home.packages = [
-      pkgs.nixd # Alternative Nix language server
-      pkgs.alejandra # Formatter
+      pkgs-unstable.nixd # Alternative Nix language server
+      pkgs-unstable.alejandra # Formatter
     ];
 
     programs.vscode = {

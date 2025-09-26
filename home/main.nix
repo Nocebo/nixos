@@ -22,7 +22,7 @@
     pkgs.duckdb
   ];
   # Self made options
-  vscode.enable = true;
+  editor.vscode = true;
 
   # Keep on all?
   systemd.user.startServices = "sd-switch";
