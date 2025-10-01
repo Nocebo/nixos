@@ -5,6 +5,8 @@
     settings = {
       show_banner = false;
       buffer_editor = "code";
+      completions.algorithm = "fuzzy";
+      edit_on_enter = true;
     };
     shellAliases = {
       ns = "sudo nixos-rebuild switch ";
@@ -16,11 +18,28 @@
       nxr = "nix run";
     };
   };
+  # yazi: A modern terminal file manager.
+  programs.yazi = {
+    enable = true;
+    package = pkgs-unstable.yazi;
+    enableNushellIntegration = true;
+  };
+
+  # # broot: A tree-view file manager for the terminal.
+  # programs.broot = {
+  #   enable = true;
+  #   package = pkgs-unstable.broot;
+  #   enableNushellIntegration = true;
+  # };
+
+  # carapace: A cross-shell command completion engine.
   programs.carapace = {
     enable = true;
     package = pkgs-unstable.carapace;
     enableNushellIntegration = true;
   };
+
+  # starship: A minimal, customizable prompt for any shell.
   programs.starship = {
     enable = true;
     package = pkgs-unstable.starship;
