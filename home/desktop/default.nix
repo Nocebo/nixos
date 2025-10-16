@@ -1,5 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./stylix-wallpaper.nix
+    #./stylix-wallpaper.nix
   ];
 }

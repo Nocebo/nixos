@@ -15,6 +15,8 @@
         followSystem = true; # This ensures Home Manager follows system-wide settings
       };
       base16Scheme = "${pkgs.base16-schemes}/share/themes/seti.yaml";
+      image = ../../home/desktop/genetrix.jpg;
+      polarity = lib.mkForce "dark";
 
       fonts = {
         serif = {

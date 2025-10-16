@@ -1,7 +1,7 @@
-{pkgs-unstable, ...}: {
+{pkgs, ...}: {
   programs.nushell = {
     enable = true;
-    package = pkgs-unstable.nushell;
+    package = pkgs.nushell;
     settings = {
       show_banner = false;
       buffer_editor = "code";
@@ -21,28 +21,28 @@
   # yazi: A modern terminal file manager.
   programs.yazi = {
     enable = true;
-    package = pkgs-unstable.yazi;
+    package = pkgs.yazi;
     enableNushellIntegration = true;
   };
 
   # # broot: A tree-view file manager for the terminal.
   # programs.broot = {
   #   enable = true;
-  #   package = pkgs-unstable.broot;
+  #   package = pkgs.broot;
   #   enableNushellIntegration = true;
   # };
 
   # carapace: A cross-shell command completion engine.
   programs.carapace = {
     enable = true;
-    package = pkgs-unstable.carapace;
+    package = pkgs.carapace;
     enableNushellIntegration = true;
   };
 
   # starship: A minimal, customizable prompt for any shell.
   programs.starship = {
     enable = true;
-    package = pkgs-unstable.starship;
+    package = pkgs.starship;
     enableNushellIntegration = true;
   };
 }

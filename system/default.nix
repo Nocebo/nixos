@@ -14,7 +14,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    home-manager
+    #home-manager
     git
     #signal-desktop
   ];
