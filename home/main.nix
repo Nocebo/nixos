@@ -20,9 +20,10 @@
   ];
 
   editor.vscode = true;
+  editor.nvim = true;
 
   systemd.user.startServices = "sd-switch";
   programs.home-manager.enable = true;
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 }

@@ -4,9 +4,6 @@
   config,
   ...
 }: {
-  imports = [
-    inputs.home-manager.nixosModules.default
-  ];
   users.users = {
     kleanzy = {
       initialHashedPassword = "$6$OLITvrh1zpKBixoh$OhKacreIrEvHoLfhCw8x.krjAUILTx3/uRPy5WLQZcBzFj5c9DUU366uk0KY5p/V9N72kC.BpP8LFksYqdbvl.";
@@ -24,7 +21,6 @@
         "plugdev"
         "storage"
       ];
-      home = "/home/kleanzy";
     };
   };
 }

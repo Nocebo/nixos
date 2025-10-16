@@ -27,7 +27,6 @@
   } @ inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/nixos/configuration.nix
@@ -42,6 +41,7 @@
       };
 
       litre1 = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/litre1/configuration.nix
           stylix.nixosModules.stylix
@@ -54,19 +54,19 @@
         ];
       };
 
-      homeConfigurations = {
-        "kleanzy@main" = home-manager.lib.homeManagerConfiguration {
-          modules = [
-            ./home/main.nix
-          ];
-        };
+      # homeConfigurations = {
+      #   "kleanzy@main" = home-manager.lib.homeManagerConfiguration {
+      #     modules = [
+      #       ./home/main.nix
+      #     ];
+      #   };
 
-        "kleanzy@server" = home-manager.lib.homeManagerConfiguration {
-          modules = [
-            ./home/server.nix
-          ];
-        };
-      };
+      #   "kleanzy@server" = home-manager.lib.homeManagerConfiguration {
+      #     modules = [
+      #       ./home/server.nix
+      #     ];
+      #   };
+      # };
     };
   };
 }

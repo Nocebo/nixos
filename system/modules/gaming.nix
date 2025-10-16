@@ -20,10 +20,10 @@
     # Additional gaming packages
     environment.systemPackages = with pkgs; [
       # Gaming utilities
-      gamemode
-      mangohud
-      lutris
-      protontricks
+      # gamemode
+      # mangohud
+      # lutris
+      # protontricks
     ];
   };
 }

@@ -6,7 +6,6 @@
       show_banner = false;
       buffer_editor = "code";
       completions.algorithm = "fuzzy";
-      edit_on_enter = true;
     };
     shellAliases = {
       ns = "sudo nixos-rebuild switch ";

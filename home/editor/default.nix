@@ -8,6 +8,7 @@
     ./vscode.nix
     ./zed.nix
     ./noeditor.nix
+    ./nvim.nix
   ];
 
   # options.graphical.editor = lib.mkOption {

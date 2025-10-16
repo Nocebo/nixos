@@ -21,6 +21,18 @@
     # hypridle
   ];
 
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    withUWSM = true;
+  };
+
+  programs.waybar = {
+    enable = true;
+    configFile = ./waybar/config;
+    styleFile = ./waybar/style.css;
+  };
+
   xdg.configFile."hypr/hyprland.conf".source = ../conf/hyprland.conf;
 
   # wayland.windowManager.hyprland = {

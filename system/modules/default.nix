@@ -5,6 +5,6 @@
     ./cleanup.nix
     ./virt.nix
     ./gaming.nix
-    ./fonts.nix
+    #./fonts.nix
   ];
 }
