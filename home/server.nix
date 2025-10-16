@@ -10,11 +10,11 @@
   ];
 
   # Self made options
-  noeditor.enable = true;
+  editor.none = true;
 
   # Keep on all?
   systemd.user.startServices = "sd-switch";
   programs.home-manager.enable = true;
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 }
